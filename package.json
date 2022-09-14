@@ -1,10 +1,15 @@
 {
   "name": "vercel-ts-sdk",
   "version": "1.0.0",
-  "main": "index.ts",
   "license": "MIT",
   "dependencies": {
+    "parcel": "^2.7.0",
     "sanctuary": "^3.1.0",
     "typescript": "^4.8.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "dotenv": "^16.0.2",
+    "ts-node": "^10.9.1"
   }
 }
