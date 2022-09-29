@@ -1,2 +1,2 @@
 export { setVercelToken } from "./common";
-export { getUserTokens } from "./tokens";
+export { getUserTokens } from "./authorization";
