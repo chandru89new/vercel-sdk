@@ -1,10 +1,7 @@
 import { endpointMap } from "./common";
 import { CreateAuthTokenResponse, TokensResponse } from "./types";
+import { PaginationParameters } from "./types/pagination";
 import { CustomError, del, get, post } from "./utils/fetch";
-import {
-  constructPaginationString,
-  PaginationParameters,
-} from "./utils/pagination";
 
 export const getUserTokens = (paginationParameters?: PaginationParameters) => {
   return get<TokensResponse>(endpointMap.userTokens, {

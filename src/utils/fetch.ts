@@ -3,7 +3,7 @@ import { config, debugMode, nullIfUndefined } from "../common";
 import { Primitives } from "../types/fetch";
 import { constructQueryString } from "./url";
 import fetch, { FetchError, RequestInit, Response } from "node-fetch";
-import { PaginationParameters } from "./pagination";
+import { PaginationParameters } from "../types/pagination";
 const headersWithConfig = (headers: RequestInit["headers"]) =>
   merge({}, headers, config);
 
