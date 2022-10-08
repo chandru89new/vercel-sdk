@@ -1,16 +1,18 @@
-import { RequestInfo } from "node-fetch";
-import { Primitives } from "../types/fetch";
+// import { RequestInfo } from "node-fetch";
+// import { Primitives } from "../types/fetch";
 
 export const constructQueryString = (
   url: string,
-  query?: { [key: string]: Primitives }
+  query?: { [key: string]: string | number | boolean | undefined }
 ): string => {
   if (!query) {
     return url;
   }
   const kvPairs = Object.entries(query);
   const params = kvPairs
-    .map((value) => `${value[0]}=${encodeURIComponent(value[1] as Primitives)}`)
+    .map(
+      (value) => `${value[0]}=${value[1] ? encodeURIComponent(value[1]) : ""}`
+    )
     .join("&");
   return `${url}?${params}`;
 };

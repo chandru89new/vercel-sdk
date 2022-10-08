@@ -1,4 +1,4 @@
-type Limit = { limit: number; next?: never; previous?: never };
+type Limit = { limit?: number; next?: never; previous?: never };
 type Next = { next: number; previous?: never; limit?: never };
 type Previous = { previous: number; next?: never; limit?: never };
 type LimitNext = { limit: number; next: number; previous?: never };
