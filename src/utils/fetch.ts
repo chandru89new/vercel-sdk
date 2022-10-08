@@ -86,11 +86,7 @@ export const asyncFetchWrapper = async <T>(
 
 type _RequestInit = RequestInit & {
   query?: {
-    [Key in Exclude<string, "limit" | "next" | "previous">]:
-      | string
-      | number
-      | boolean
-      | undefined;
+    [Key in Exclude<string, "limit" | "next" | "previous">]: Primitives;
   } & PaginationParameters;
   data?: { [key: string]: any };
 };

@@ -7,12 +7,9 @@ import {
 } from "./utils/pagination";
 
 export const getUserTokens = (paginationParameters?: PaginationParameters) => {
-  return get<TokensResponse>(
-    constructPaginationString({
-      url: endpointMap.userTokens,
-      paginationParameters,
-    })
-  );
+  return get<TokensResponse>(endpointMap.userTokens, {
+    ...(paginationParameters && { query: paginationParameters }),
+  });
 };
 
 export const createAuthToken = ({

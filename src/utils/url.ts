@@ -1,9 +1,9 @@
 // import { RequestInfo } from "node-fetch";
-// import { Primitives } from "../types/fetch";
+import { Primitives } from "../types/fetch";
 
 export const constructQueryString = (
   url: string,
-  query?: { [key: string]: string | number | boolean | undefined }
+  query?: { [key: string]: Primitives }
 ): string => {
   if (!query) {
     return url;
@@ -11,8 +11,15 @@ export const constructQueryString = (
   const kvPairs = Object.entries(query);
   const params = kvPairs
     .map(
-      (value) => `${value[0]}=${value[1] ? encodeURIComponent(value[1]) : ""}`
+      (value) =>
+        `${transformNextAndPrevious(value[0])}=${
+          value[1] ? encodeURIComponent(value[1]) : ""
+        }`
     )
     .join("&");
   return `${url}?${params}`;
+};
+
+const transformNextAndPrevious = (key: string) => {
+  return ["next", "previous"].includes(key) ? "until" : key;
 };
