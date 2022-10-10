@@ -1,4 +1,4 @@
-import { Pagination } from "./common";
+import { Pagination } from "./pagination";
 
 /** Authentication token metadata. */
 interface AuthToken {
