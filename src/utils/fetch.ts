@@ -3,6 +3,7 @@ import { config, debugMode, nullIfUndefined } from "../common";
 import { Primitives } from "../types/fetch";
 import { constructQueryString } from "./url";
 import fetch, { FetchError, RequestInit, Response } from "node-fetch";
+import { PaginationParameters } from "../types/pagination";
 const headersWithConfig = (headers: RequestInit["headers"]) =>
   merge({}, headers, config);
 
@@ -84,7 +85,9 @@ export const asyncFetchWrapper = async <T>(
 };
 
 type _RequestInit = RequestInit & {
-  query?: { [key: string]: Primitives };
+  query?: {
+    [Key in Exclude<string, "limit" | "next" | "previous">]: Primitives;
+  } & PaginationParameters;
   data?: { [key: string]: any };
 };
 

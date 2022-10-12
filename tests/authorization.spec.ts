@@ -23,6 +23,24 @@ test("get token (right token)", async () => {
   expect(data).not.toBe(null);
 });
 
+test("get token (with pagination param 'next')", async () => {
+  const { data, error } = await getUserTokens({
+    next: 89897787234,
+    limit: 1,
+  });
+  expect(error).toBe(null);
+  expect(data).not.toBe(null);
+});
+
+test("get token (with pagination param 'previous')", async () => {
+  const { data, error } = await getUserTokens({
+    previous: 89897787234,
+    limit: 1,
+  });
+  expect(error).toBe(null);
+  expect(data).not.toBe(null);
+});
+
 test("create a new token", async () => {
   const { data, error, response } = await createAuthToken({ name: "SDK Test" });
   expect(error).toBe(null);
