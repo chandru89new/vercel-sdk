@@ -1,4 +1,24 @@
 import { Pagination } from "./pagination";
+import { PaginationParameters } from "./pagination";
+
+export type ListDeploymentsParams = {
+  app?: string;
+  from?: number;
+  projectId?: string;
+  rollbackCandidate: boolean;
+  since?: number;
+  state?:
+    | "BUILDING"
+    | "ERROR"
+    | "INITIALIZING"
+    | "QUEUED"
+    | "READY"
+    | "CANCELED";
+  target?: string;
+  teamId?: string;
+  to?: number;
+  users?: string;
+} & PaginationParameters;
 
 export interface DeploymentList {
   pagination: Pagination;
