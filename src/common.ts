@@ -30,6 +30,10 @@ export const endpointMap = {
   getAlias: (id: string) => `${BASE_URL}/v4/aliases/${id}`,
   deleteAlias: (id: string) => `${BASE_URL}/v2/aliases/${id}`,
   assignAlias: (id: string) => `${BASE_URL}/v2/deployments/${id}/aliases`,
+  uploadCert: `${BASE_URL}/v7/certs`,
+  getCert: (certId: string) => `${BASE_URL}/v7/certs/${certId}`,
+  deleteCert: (certId: string) => `${BASE_URL}/v7/certs/${certId}`,
+  issueCert: `${BASE_URL}/v7/certs`,
 };
 
 export const nullIfUndefined = (val: any) => {

@@ -14,3 +14,4 @@ export {
   getAlias,
 } from "./alias";
 export { listDeployments } from "./deployments";
+export { uploadCert, getCert, deleteCert, issueNewCert } from "./certs";
