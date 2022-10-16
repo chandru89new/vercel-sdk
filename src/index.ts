@@ -15,3 +15,18 @@ export {
 } from "./alias";
 export { listDeployments } from "./deployments";
 export { uploadCert, getCert, deleteCert, issueNewCert } from "./certs";
+export {
+  listTeamMembers,
+  listTeams,
+  getAccessRequestStatus,
+  getTeam,
+  requestAccessToTeam,
+  createTeam,
+  deleteTeam,
+  deleteTeamInviteCode,
+  inviteUser,
+  joinTeam,
+  removeTeamMember,
+  updateTeam,
+  updateTeamMember,
+} from "./teams";
